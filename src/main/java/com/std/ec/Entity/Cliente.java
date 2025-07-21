@@ -19,15 +19,15 @@ public class Cliente {
     private String correo ;
 
     @Column (length = 50)
-    private String ubicacion;
+    private String distrito;
 
     public Cliente(){}
 
-    public Cliente (String nombre , String telefono , String correo , String ubicacion){
+    public Cliente (String nombre , String telefono , String correo , String distrito){
         this.nombre = nombre;
         this.telefono = telefono;
         this.correo = correo ;
-        this.ubicacion = ubicacion ;
+        this.distrito = distrito ;
 
     }
 
@@ -63,10 +63,10 @@ public class Cliente {
     }
 
 
-    public String getUbicacion() {
-        return ubicacion;
+    public String getDistrito() {
+        return distrito;
     }
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public void setDistrito(String distrito) {
+        this.distrito = distrito;
     }
 }

@@ -43,7 +43,7 @@ public class ClienteController {
                     cliente.setNombre(clienteActualizado.getNombre());
                     cliente.setCorreo(clienteActualizado.getCorreo());
                     cliente.setTelefono(clienteActualizado.getTelefono());
-                    cliente.setUbicacion(clienteActualizado.getUbicacion());
+                    cliente.setDistrito(clienteActualizado.getDistrito());
                     Cliente actualizado = clienteRepository.save(cliente);
                     return ResponseEntity.ok(actualizado); // El estado sera de 200 si se actualizo el cliente
                 })
