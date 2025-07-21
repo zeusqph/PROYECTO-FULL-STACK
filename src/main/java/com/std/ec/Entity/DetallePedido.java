@@ -13,7 +13,7 @@ public class DetallePedido {
 
 
     @ManyToOne
-    @JoinColumn(name = "id_pedido",nullable = false)
+    @JoinColumn(name = "pedido_id",nullable = false)
     private Pedido pedido;
 
     @ManyToOne

@@ -15,7 +15,7 @@ public class Pedido {
     private Long id;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cliente_id",nullable = false)
     private Cliente cliente;
 
