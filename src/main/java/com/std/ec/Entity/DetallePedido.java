@@ -1,4 +1,6 @@
 package com.std.ec.Entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +16,7 @@ public class DetallePedido {
 
     @ManyToOne
     @JoinColumn(name = "pedido_id",nullable = false)
+    @JsonBackReference
     private Pedido pedido;
 
     @ManyToOne

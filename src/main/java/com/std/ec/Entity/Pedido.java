@@ -1,5 +1,6 @@
 package com.std.ec.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -28,7 +29,8 @@ public class Pedido {
     @Column
     private LocalDateTime fecha = LocalDateTime.now();
 
-    @OneToMany(mappedBy = "pedido",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "pedido",cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<DetallePedido>detalles;
 
     public Pedido(){}
