@@ -1,13 +1,12 @@
 package com.std.ec.Controller;
 
+
 import com.std.ec.DTO.DetallePedidoDTO;
 import com.std.ec.DTO.DetallePedidoRequest;
-import com.std.ec.Entity.DetallePedido;
 import com.std.ec.Service.DetallePedidoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.std.ec.DTO.DetallePedidoRequest;
 import java.util.List;
 
 @RestController
@@ -37,6 +36,25 @@ public class DetallePedidoController {
     public ResponseEntity<List<DetallePedidoDTO>>obtenerDetallesPorPedido(@PathVariable Long pedidoId){
         List<DetallePedidoDTO> detalles = detallePedidoService.obtenerDetallesPorPedido(pedidoId);
         return ResponseEntity.ok(detalles);
+    }
+
+    @PutMapping("/detalles/{detalleId}")
+    public ResponseEntity<DetallePedidoDTO>actualizarDetalle(
+        @PathVariable Long detalleId,
+        @RequestBody DetallePedidoRequest request){
+
+        DetallePedidoDTO actualizado=detallePedidoService.actualizarDetalle(
+                detalleId,
+                request.getPizzaId(),
+                request.getCantidad()
+        );
+        return  ResponseEntity.ok(actualizado);
+    }
+
+    @DeleteMapping("/detalles/{detalleId}")
+    public ResponseEntity<Void> eliminarDetalle(@PathVariable Long detalleId) {
+        detallePedidoService.eliminarDetalle(detalleId);
+        return ResponseEntity.noContent().build();
     }
 
 }
