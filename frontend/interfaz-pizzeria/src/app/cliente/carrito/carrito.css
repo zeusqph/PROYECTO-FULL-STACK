@@ -1,0 +1,17 @@
+main{
+    padding: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+h1{
+    color: #333;
+    font-size: 24px;
+}
+a{
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration:none ;
+    color: #007bff;
+}
+a:hover{
+    text-decoration: underline;
+}
